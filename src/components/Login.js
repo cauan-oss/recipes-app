@@ -20,8 +20,8 @@ export default function Login() {
     return validation;
   }
 
-  function saveEmailLS(em) {
-    localStorage.setItem('user', em);
+  function saveEmailLS(email) {
+    localStorage.setItem('user', JSON.stringify({ email }));
   }
 
   return (

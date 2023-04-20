@@ -7,7 +7,7 @@ import renderWithRouter from '../renderWithRouter';
 
 describe('app de receitas', () => {
   test('Login', () => {
-    const { history } = renderWithRouter(
+    renderWithRouter(
       <ProviderLogin>
         <App />
       </ProviderLogin>,
