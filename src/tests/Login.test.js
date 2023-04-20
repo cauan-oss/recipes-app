@@ -1,15 +1,15 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from '../App';
+import Login from '../components/Login';
 import ProviderLogin from '../context/ContextLogin ';
 import renderWithRouter from '../renderWithRouter';
 
 describe('Testando tela de login', () => {
   it('Login', () => {
-    renderWithRouter(
+    const { history } = renderWithRouter(
       <ProviderLogin>
-        <App />
+        <Login />
       </ProviderLogin>,
     );
 
@@ -27,5 +27,6 @@ describe('Testando tela de login', () => {
     userEvent.type(passwordInput, '12345678');
     expect(buttonLogin).toBeEnabled();
     userEvent.click(buttonLogin);
+    expect(history.location.pathname).toBe('/meals');
   });
 });
